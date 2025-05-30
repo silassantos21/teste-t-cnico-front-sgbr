@@ -55,10 +55,9 @@ quasar build
 
 ![image](https://github.com/user-attachments/assets/1d19dc0f-8f77-4755-a67b-fac5dacd16c2)
 
+![Captura de tela 2025-05-30 111010](https://github.com/user-attachments/assets/e87443df-222a-4dbc-a2ee-4ab75e6ec13d)
 
-
-
-
+![Captura de tela 2025-05-30 111100](https://github.com/user-attachments/assets/74fcd511-de0f-476f-98f6-1bcc7b91d747)
 
 
 
