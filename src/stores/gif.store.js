@@ -10,11 +10,28 @@ export const useGifStore = defineStore("gifStore", () => {
   const filtered_gifs = ref([]);
   const favorited_gifs = ref([]);
 
-  async function getGifsByFilter(filter = "dance") {
+  const categorias = ref([]);
+  const categoriasArr = ref([]);
+  const sub_categorias = ref([]);
+
+  async function getGifsByFilter(filter = null) {
     isLoading.value = true;
     try {
       const { data } = await api.get(`${URLS.gifs_search}&q=${filter}`);
       setFilteredGifs(data);
+      return data;
+    } catch (e) {
+      return Promise.reject(e);
+    } finally {
+      isLoading.value = false;
+    }
+  }
+
+  async function getCategoriasGifsByFilter() {
+    isLoading.value = true;
+    try {
+      const { data } = await api.get(`${URLS.categories}`);
+      setCategoriasGifs(data);
       return data;
     } catch (e) {
       return Promise.reject(e);
@@ -48,6 +65,21 @@ export const useGifStore = defineStore("gifStore", () => {
     });
   };
 
+  const setCategoriasGifs = (value) => {
+    categoriasArr.value = value.data;
+    categorias.value = value.data.map((v) => v.name);
+  };
+
+  const setSubCategoriasGifs = (categoria) => {
+    sub_categorias.value = categoriasArr.value
+      .filter((v) => v.name === categoria)[0]
+      .subcategories.map((w) => w.name);
+  };
+
+  function clearSubCategoriasGifs() {
+    sub_categorias.value = [];
+  }
+
   const removeFavoritedGif = (value) => {
     favorited_gifs.value = favorited_gifs.value.filter(
       (w) => w.id !== value.id
@@ -62,8 +94,13 @@ export const useGifStore = defineStore("gifStore", () => {
   return {
     filtered_gifs,
     favorited_gifs,
+    categorias,
+    sub_categorias,
     clearGifs,
     getGifsByFilter,
+    getCategoriasGifsByFilter,
+    setSubCategoriasGifs,
+    clearSubCategoriasGifs,
     setFavoritedGifs,
     removeFavoritedGif,
     isLoading,
