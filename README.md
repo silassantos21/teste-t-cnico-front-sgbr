@@ -42,3 +42,30 @@ quasar build
 ```
 
 ### Prints do projeto
+
+![image](https://github.com/user-attachments/assets/b343906c-873e-468b-a9b5-b6abc95061fe)
+
+![image](https://github.com/user-attachments/assets/798f7538-096c-42bf-a97d-aa8a7a6719d0)
+
+![image](https://github.com/user-attachments/assets/e4f10142-7013-4e51-b4ec-527870cf53cf)
+
+![image](https://github.com/user-attachments/assets/54c39f34-2328-4386-9801-3a6542be20ae)
+
+![image](https://github.com/user-attachments/assets/10023362-abeb-4c8b-a29c-a36be0210ed8)
+
+![image](https://github.com/user-attachments/assets/1d19dc0f-8f77-4755-a67b-fac5dacd16c2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
